@@ -41,9 +41,13 @@
                   </div>
                   <div class="col-md-6 col-lg-7 d-flex align-items-center">
                     <div class="card-body p-4 p-lg-5 text-black">
-      
-                      <form>
-      
+                      @if(Session::has('status'))
+                      <div class="alert alert-danger" role="alert">
+                          {{ Session::get('message') }}
+                      </div>
+                      @endif
+                      <form method="POST" action="">
+                        @csrf
                         <div class="d-flex align-items-center mb-3 pb-1">
                           <span class="h1 fw-bold mb-0">SISTEM INFORMASI PENGARSIPAN DINAS KOPERASI & UKM</span>
                         </div>
@@ -51,17 +55,17 @@
                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Welcome back! Please login to your account.</h5>
       
                         <div class="form-outline mb-4">
-                          <input type="email" id="form2Example17" class="form-control form-control-lg" />
+                          <input type="email" name="email" id="email" class="form-control form-control-lg" required/>
                           <label class="form-label" for="form2Example17">Email address</label>
                         </div>
       
                         <div class="form-outline mb-4">
-                          <input type="password" id="form2Example27" class="form-control form-control-lg" />
+                          <input type="password" id="password" name="password" class="form-control form-control-lg" required/>
                           <label class="form-label" for="form2Example27">Password</label>
                         </div>
       
                         <div class="pt-1 mb-4">
-                          <button class="btn btn-dark btn-lg btn-block" type="button">Login</button>
+                          <button class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
                         </div>
     
                       </form>

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Wilayah;
 use Illuminate\Http\Request;
 
-class Admincontroller extends Controller
+class AdminController extends Controller
 {
     public function dashboard(){
         return view('dashboard-admin',[

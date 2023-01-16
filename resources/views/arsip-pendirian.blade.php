@@ -46,14 +46,14 @@
         <div class="pcoded-navigation-label" data-i18n="nav.category.forms">Pengarsipan</div>
         <ul class="pcoded-item pcoded-left-item">
             <li class="active">
-                <a href="chart.html" class="waves-effect waves-dark">
+                <a href="/arsip-pendirian" class="waves-effect waves-dark">
                     <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                     <span class="pcoded-mtext" data-i18n="nav.form-components.main">Arsip Pendirian</span>
                     <span class="pcoded-mcaret"></span>
                 </a>
             </li>
             <li>
-                <a href="map-google.html" class="waves-effect waves-dark">
+                <a href="arsip-pad" class="waves-effect waves-dark">
                     <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                     <span class="pcoded-mtext" data-i18n="nav.form-components.main">Arsip PAD</span>
                     <span class="pcoded-mcaret"></span>
@@ -111,7 +111,7 @@
                           </div>
                           <div class="card-block table-border-style">
                             <div class="table-responsive">
-                              <table id="example" class="table table-hover">
+                              <table id="myTable" class="table table-hover">
                                 <thead>
                                   <tr>
                                     <th>No</th>

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use app\Http\Controllers\AdminController;
+use app\Http\Controllers\UserController;
 use app\Http\Controllers\AuthController;
 
 
@@ -15,6 +16,8 @@ use app\Http\Controllers\AuthController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/','App\Http\Controllers\UserController@index');
 
 Route::get('/login','App\Http\Controllers\AuthController@login')->name('login')->middleware('guest');
 Route::post('/login','App\Http\Controllers\AuthController@auth')->middleware('guest');;
