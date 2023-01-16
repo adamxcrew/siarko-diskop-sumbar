@@ -9,21 +9,21 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     public function dashboard(){
-        return view('dashboard-admin',[
-        "title" => "Dashboard Admin"
+        return view('dashboard',[
+        "title" => "Dashboard"
     ]);
   }
 
   public function profile(){
     return view('profile',[
-        "title" => "Profil"
+        "title" => "Profile"
       ]);
   }
 
   public function index()
   {
     $wilayah = Wilayah::get();
-    return view('master-koperasi-ukm',[
+    return view('master-koperasi',[
         "title" => "Koperasi & UKM",
         'dataWilayah' => $wilayah
       ]);
@@ -32,9 +32,10 @@ class AdminController extends Controller
   public function show($id)
   {
     $wilayah = Wilayah::find($id);
-    return view('testerdata',[
+    // dd($wilayah);
+    return view('detail-master',[
         "title" => "Detail Koperasi & UKM",
-        'dataWilayah' => $wilayah
+        'detailWilayah' => $wilayah
       ]);
   }
 

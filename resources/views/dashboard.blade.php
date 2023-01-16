@@ -1,7 +1,6 @@
-@extends('layouts.index')
 
-@section('konten')
-
+@extends('layouts.index') @section('konten')
+<!-- Isi Page-header Disini -->                  
 <div class="pcoded-content">
   <!-- Page-header start -->
   <div class="page-header">
@@ -9,8 +8,8 @@
           <div class="row align-items-center">
               <div class="col-md-8">
                   <div class="page-header-title">
-                      <h5 class="m-b-10">Profil</h5>
-                      <p class="m-b-0">Dinas Koperasi & UKM Provinsi Sumatera Barat</p>
+                      <h5 class="m-b-10">Dashboard</h5>
+                      <p class="m-b-0">Halo {{ Auth::user()->name }}! Welcome to Sistem Informasi Pengarsipan Dinas Koperasi & UKM Provinsi Sumatera Barat</p>
                   </div>
               </div>
               <div class="col-md-4">

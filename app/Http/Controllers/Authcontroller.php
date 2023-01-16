@@ -7,12 +7,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
-class Authcontroller extends Controller
+class AuthController extends Controller
 {
-    public function login()
+  public function login()
     {
-        return view('auth/login');
+      return view('/login');
     }
+
 
   public function auth(Request $request)
     {
@@ -36,13 +37,14 @@ class Authcontroller extends Controller
 
     }
 
+
   public function logout(Request $request)
   {
     Auth::logout();
     $request->session()->invalidate();
     $request->session()->regenerateToken();
 
-    return redirect('/login');
+    return redirect('/');
 
   }
 }

@@ -31,7 +31,7 @@ body {
     font-size: 0.875em;
     overflow-x: hidden;
     color: #455a64;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Roboto", sans-serif;
     background-attachment: fixed;
     background-image: linear-gradient(
         rgba(255, 255, 255, 0.2) 177px,
@@ -13149,7 +13149,7 @@ body[themebg-pattern="theme6"] {
 .pcoded .pcoded-header[header-theme="theme6"] a {
     color: #fff;
 }
-.pcoded[fream-type="theme1"] .page-header:before{
+.pcoded[fream-type="theme1"] .page-header:before {
     background: white;
 }
 .pcoded[fream-type="theme1"] .main-menu .main-menu-header:before {
@@ -13758,8 +13758,8 @@ body.menu-bottom #collapse-menu {
 }
 
 .btn-danger {
-    background-color: #FF0000;
-    border-color: #FF0000;
+    background-color: #ff0000;
+    border-color: #ff0000;
     color: #fff;
     cursor: pointer;
     -webkit-transition: all ease-in 0.3s;
@@ -13887,8 +13887,8 @@ body.menu-bottom #collapse-menu {
 }
 
 .btn-green {
-    background-color: #09A129;
-    border-color: #09A129;
+    background-color: #09a129;
+    border-color: #09a129;
     color: #fff;
     cursor: pointer;
     -webkit-transition: all ease-in 0.3s;
@@ -24635,23 +24635,23 @@ body.dark .page-header:before {
 }
 
 .myInput {
-  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
-  background-position: 10px 12px; /* Position the search icon */
-  background-repeat: no-repeat; /* Do not repeat the icon image */
-  width: 100%; /* Full-width */
-  font-size: 16px; /* Increase font-size */
-  padding: 12px 20px 12px 40px; /* Add some padding */
-  margin-bottom: 12px; /* Add some space below the input */
+    background-image: url("/css/searchicon.png"); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    margin-bottom: 12px; /* Add some space below the input */
 }
 
 .myInput {
-  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
-  background-position: 10px 12px; /* Position the search icon */
-  background-repeat: no-repeat; /* Do not repeat the icon image */
-  width: 100%; /* Full-width */
-  font-size: 16px; /* Increase font-size */
-  padding: 12px 20px 12px 40px; /* Add some padding */
-  margin-bottom: 12px; /* Add some space below the input */
+    background-image: url("/css/searchicon.png"); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    margin-bottom: 12px; /* Add some space below the input */
 }
 
 .btn-style {
@@ -24671,5 +24671,4 @@ body.dark .page-header:before {
 }
 
 .icon-style-right {
-    
 }
