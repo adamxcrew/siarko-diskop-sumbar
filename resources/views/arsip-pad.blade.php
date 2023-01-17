@@ -31,11 +31,8 @@
                         <div class="card">
                           <div class="card-header">
                             <h5>Tabel Arsip Perubahan Anggaran Dasar</h5>
-                            <span
-                              >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores adipisci pariatur odit omnis atque architecto ipsa quas neque eveniet cumque.</span
-                            >
                             <div class="card-header-right">
-                              <ul class="list-unstyled card-option">
+                              {{-- <ul class="list-unstyled card-option">
                                 <li>
                                   <i class="fa fa fa-wrench open-card-option"></i>
                                 </li>
@@ -45,17 +42,17 @@
                                 <li><i class="fa fa-minus minimize-card"></i></li>
                                 <li><i class="fa fa-refresh reload-card"></i></li>
                                 <li><i class="fa fa-trash close-card"></i></li>
-                              </ul>
+                              </ul> --}}
                             </div>
                           </div>
                           <div class="card-block table-border-style">
                             <div class="table-responsive">
-                              <table class="table table-hover">
+                              <table id="myTable" class="table table-hover">
                                 <thead>
                                   <tr>
                                     <th>No</th>
-                                    <th>Nama Koperasi</th>
-                                    <th>Kota/Kabupaten</th>
+                                    <th>Nama Koperasi dan UKM</th>
+                                    <th>Kabupaten/Kota</th>
                                     <th>File 1</th>
                                     <th>File 2</th>
                                   </tr>
@@ -63,24 +60,24 @@
                                 <tbody>
                                   <tr>
                                     <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                    <td>@mdo</td>
+                                    <td>Koperasi Solidarity Infinity</td>
+                                    <td>Padang</td>
+                                    <td><a href="#"><img src="assets/images/pdf.png" width="30dp"></a></td>
+                                    <td><a href="#"><img src="assets/images/pdf.png" width="30dp"></a></td>
                                   </tr>
                                   <tr>
                                     <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                    <td>@fat</td>
+                                    <td>Koperasi Tani Jaya</td>
+                                    <td>Padang</td>
+                                    <td><a href="#"><img src="assets/images/pdf.png" width="30dp"></a></td>
+                                    <td><a href="#"><img src="assets/images/pdf.png" width="30dp"></a></td>
                                   </tr>
                                   <tr>
                                     <th scope="row">3</th>
-                                    <td>Larry</td>
-                                    <td>the Bird</td>
-                                    <td>@twitter</td>
-                                    <td>@twitter</td>
+                                    <td>Koperasi Tukang Makmur</td>
+                                    <td>Padang</td>
+                                    <td><a href="#"><img src="assets/images/pdf.png" width="30dp"></a></td>
+                                    <td><a href="#"><img src="assets/images/pdf.png" width="30dp"></a></td>
                                   </tr>
                                 </tbody>
                               </table>

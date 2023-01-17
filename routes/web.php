@@ -17,6 +17,9 @@ Route::get('/logout','App\Http\Controllers\AuthController@logout')->middleware('
 Route::get('/dashboard-admin', 'App\Http\Controllers\AdminController@dashboard')->middleware('auth');
 Route::get('/profil', 'App\Http\Controllers\AdminController@profile')->middleware('auth');
 Route::get('/master-data', 'App\Http\Controllers\AdminController@index')->middleware('auth');
-Route::get('/detail-master-data/{id}', 'App\Http\Controllers\AdminController@show')->middleware('auth');
 Route::get('/arsip-pendirian', 'App\Http\Controllers\AdminController@arsippendirian')->middleware('auth');
 Route::get('/arsip-pad', 'App\Http\Controllers\AdminController@arsippad')->middleware('auth');
+
+
+//Belum masuk auth
+Route::get('/detail-master-data', 'App\Http\Controllers\AdminController@show');

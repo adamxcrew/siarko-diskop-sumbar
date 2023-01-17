@@ -29,13 +29,13 @@ class AdminController extends Controller
       ]);
   }
 
-  public function show($id)
+  public function show()
   {
-    $wilayah = Wilayah::find($id);
+    // $wilayah = Wilayah::find($id);
     // dd($wilayah);
     return view('detail-master',[
         "title" => "Detail Koperasi & UKM",
-        'detailWilayah' => $wilayah
+        // 'detailWilayah' => $wilayah
       ]);
   }
 

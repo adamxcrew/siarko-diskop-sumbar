@@ -35,17 +35,7 @@
                                 >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores adipisci pariatur odit omnis atque architecto ipsa quas neque eveniet cumque.</span
                               >
                               <div class="card-header-right">
-                                <ul class="list-unstyled card-option">
-                                  <li>
-                                    <i class="fa fa fa-wrench open-card-option"></i>
-                                  </li>
-                                  <li>
-                                    <i class="fa fa-window-maximize full-card"></i>
-                                  </li>
-                                  <li><i class="fa fa-minus minimize-card"></i></li>
-                                  <li><i class="fa fa-refresh reload-card"></i></li>
-                                  <li><i class="fa fa-trash close-card"></i></li>
-                                </ul>
+                                {{-- <button class="btn btn-primary">Tambah Koperasi</button> --}}
                               </div>
                             </div> 
                             <div class="card-block table-border-style">
@@ -63,7 +53,7 @@
                                     <tr>
                                       <td scope="row">{{$loop->iteration}}</td>
                                       <td>{{ $dw->Jenis }} {{ $dw->Nama }}</td>
-                                      <td><a class="btn btn-primary" href="/detail-master-data/{{ $dw ->ID }}">Detail</a></td>
+                                      <td><a class="btn btn-primary" href="/detail-master-data">Detail</a></td>
                                     </tr>
                                     @endforeach
                                   </tbody>
