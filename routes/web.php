@@ -22,4 +22,4 @@ Route::get('/arsip-pad', 'App\Http\Controllers\AdminController@arsippad')->middl
 
 
 //Belum masuk auth
-Route::get('/detail-master-data', 'App\Http\Controllers\AdminController@show');
+Route::get('/detail-master-data/{id}', 'App\Http\Controllers\AdminController@show');

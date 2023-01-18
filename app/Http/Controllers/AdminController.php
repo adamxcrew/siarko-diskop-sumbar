@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Koperasi;
 use App\Models\Wilayah;
 use Illuminate\Http\Request;
 
@@ -31,12 +32,12 @@ class AdminController extends Controller
 
   public function show()
   {
-    // $wilayah = Wilayah::find($id);
-    // dd($wilayah);
-    return view('detail-master',[
-        "title" => "Detail Koperasi & UKM",
-        // 'detailWilayah' => $wilayah
-      ]);
+    return Wilayah::find('KT01');
+    // $wilayah = Wilayah::with(['koperasi'])->findorFail($id);
+    // return view('tester',[
+    //     "title" => "Detail Koperasi & UKM",
+    //     'Wilayah'=>$wilayah
+    //   ]);
   }
 
 

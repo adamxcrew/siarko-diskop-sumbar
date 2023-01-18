@@ -53,7 +53,7 @@
                                     <tr>
                                       <td scope="row">{{$loop->iteration}}</td>
                                       <td>{{ $dw->Jenis }} {{ $dw->Nama }}</td>
-                                      <td><a class="btn btn-primary" href="/detail-master-data">Detail</a></td>
+                                      <td><a class="btn btn-primary" href="/detail-master-data/{{ $dw->ID }}">Detail</a></td>
                                     </tr>
                                     @endforeach
                                   </tbody>

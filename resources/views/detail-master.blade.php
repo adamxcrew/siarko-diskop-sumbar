@@ -9,8 +9,8 @@
             <div class="col-md-8">
                 <div class="page-header-title">
                     <h5 class="m-b-10">Daftar Koperasi & UKM</h5>
-                    <p class="m-b-0">Kota Padang</p>
-                </div>
+                    <p class="m-b-0">{{ $Wilayah -> Jenis}} {{ $Wilayah-> Nama}}</p>
+                  </div>
             </div>
             <div class="col-md-4">
                 <ul class="breadcrumb-title">
@@ -30,7 +30,7 @@
     <!-- Hover table card start -->
     <div class="card">
       <div class="card-header">
-        <h5>Daftar Koperasi & UKM</h5>
+        <h5>Daftar Koperasi & UKM {{ $Wilayah->Jenis}} {{ $Wilayah->Nama}}</h5>
         <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores adipisci pariatur odit omnis atque architecto ipsa quas neque eveniet cumque.</span>
         <div class="card-header-right">
           <button class="btn btn-primary"><i class="ti-plus"></i> Tambah Koperasi</button>
@@ -48,13 +48,15 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="row">1</th>
-                <td>Nama</td>
+              @foreach($Wilayah->Koperasi as $wh)
+                <th scope="row">{{$loop->iteration}}</th>
+                <td>{{ $wh->nama_koperasi }}</td>
                 <td>
                   <button class="btn btn-info"><i class="ti-info-alt"></i>Detail</button>
                   <button class="btn btn-danger"><i class="ti-trash"></i>Delete</button>
                 </td>
               </tr>
+              @endforeach
             </tbody>
           </table>
         </div>
