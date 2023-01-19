@@ -8,12 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Wilayah extends Model
 {
     use HasFactory;
-    protected $table = 'tabel_wilayah';
-    protected $primary_Key = 'ID';
-    protected $fillable = ['ID','Jenis','Nama'];
 
-    public function getKoperasi()
+    protected $primaryKey = 'id_kotakab';
+
+    public function Koperasi()
     {
-        return $this->hasMany(Koperasi::class, 'id_kota','id');
+        return $this->hasMany(Koperasi::class, 'id_koperasi', 'id');
     }
 }
