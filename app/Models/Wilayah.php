@@ -9,10 +9,9 @@ class Wilayah extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'id_kotakab';
 
     public function Koperasi()
     {
-        return $this->hasMany(Koperasi::class, 'id_koperasi', 'id');
+        return $this->hasMany(Koperasi::class, 'id_kotakab', 'id');
     }
 }

@@ -44,7 +44,7 @@
                                   <thead>
                                     <tr>
                                       <th>No</th>
-                                      <th>Wilayah</th>
+                                      <th>Nama</th>
                                       <th>Action</th>
                                     </tr>
                                   </thead>
@@ -52,8 +52,8 @@
                                     @foreach ($dataWilayah as $dw)
                                     <tr>
                                       <td scope="row">{{$loop->iteration}}</td>
-                                      <td>{{ $dw->Jenis }} {{ $dw->Nama }}</td>
-                                      <td><a class="btn btn-primary" href="/detail-master-data/{{ $dw->ID }}">Detail</a></td>
+                                      <td>{{ $dw->nama }}</td>
+                                      <td><a class="btn btn-primary" href="/detail-master-data/{{ $dw->id }}">Detail</a></td>
                                     </tr>
                                     @endforeach
                                   </tbody>
