@@ -33,7 +33,7 @@
         <h5>Daftar Koperasi & UKM {{ $Wilayah->nama}}</h5>
         <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores adipisci pariatur odit omnis atque architecto ipsa quas neque eveniet cumque.</span>
         <div class="card-header-right">
-          <button class="btn btn-primary"><i class="ti-plus"></i> Tambah Koperasi</button>
+          <a href="/koperasi-add/{{ $Wilayah->id }}" class="btn btn-primary"><i class="ti-plus"></i> Tambah Koperasi</a>
         </div>
       </div>
       <div class="card-block table-border-style">

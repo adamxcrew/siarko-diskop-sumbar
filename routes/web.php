@@ -19,7 +19,10 @@ Route::get('/profil', 'App\Http\Controllers\AdminController@profile')->middlewar
 Route::get('/master-data', 'App\Http\Controllers\AdminController@index')->middleware('auth');
 Route::get('/arsip-pendirian', 'App\Http\Controllers\AdminController@arsippendirian')->middleware('auth');
 Route::get('/arsip-pad', 'App\Http\Controllers\AdminController@arsippad')->middleware('auth');
-
+Route::get('/koperasi-add/{id}', 'App\Http\Controllers\AdminController@create')->middleware('auth');
+Route::post('/koperasi-add', 'App\Http\Controllers\AdminController@store')->middleware('auth');;
 
 //Belum masuk auth
 Route::get('/detail-master-data/{id}', 'App\Http\Controllers\AdminController@show');
+
+
