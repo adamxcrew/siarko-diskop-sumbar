@@ -15,14 +15,14 @@
                   </div>
               </div>
           </div>
-          <a href="index.html">
-              <img class="img-fluid" src="assets/images/siarko2.png" alt="Theme-Logo" />
+          <a href="/dashboard-admin">
+              <img class="img-fluid" src={{ asset("assets/images/siarko2.png") }} alt="Theme-Logo" />
           </a>
           <a class="mobile-options waves-effect waves-light">
               <i class="ti-more"></i>
           </a>
       </div>
-    
+
       <div class="navbar-container container-fluid">
           <ul class="nav-left">
               <li>
@@ -37,7 +37,7 @@
           <ul class="nav-right">
               <li class="user-profile header-notification">
                   <a href="#!" class="waves-effect waves-light">
-                      <img src="assets/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
+                      <img src={{ asset("assets/images/avatar-4.jpg") }} class="img-radius" alt="User-Profile-Image">
                       <span>{{ Auth::user()->name }}</span>
                       <i class="ti-angle-down"></i>
                   </a>

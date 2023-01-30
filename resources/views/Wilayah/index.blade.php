@@ -8,8 +8,8 @@
           <div class="row align-items-center">
               <div class="col-md-8">
                   <div class="page-header-title">
-                      <h5 class="m-b-10">Arsip Pendirian</h5>
-                      <p class="m-b-0">Temukan file arsip pendirian secara cepat disini</p>
+                      <h5 class="m-b-10">Wilayah</h5>
+                      <p class="m-b-0">Kota dan Kabupaten yang ada di Sumatera Barat</p>
                   </div>
               </div>
               <div class="col-md-4">
@@ -17,7 +17,7 @@
                       <li class="breadcrumb-item">
                           <a href="index.html"> <i class="fa fa-home"></i> </a>
                       </li>
-                      <li class="breadcrumb-item"><a href="#!">Arsip Pendirian</a>
+                      <li class="breadcrumb-item"><a href="#!">Arsip PAD</a>
                       </li>
                   </ul>
               </div>
@@ -30,19 +30,10 @@
                         <!-- Hover table card start -->
                         <div class="card">
                           <div class="card-header">
-                            <h5>Tabel Arsip Pendirian</h5>
+                            <h5>Tabel Wilayah Sumatera Barat</h5>
+                            <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores adipisci pariatur odit omnis atque architecto ipsa quas neque eveniet cumque.</span>
                             <div class="card-header-right">
-                              {{-- <ul class="list-unstyled card-option">
-                                <li>
-                                  <i class="fa fa fa-wrench open-card-option"></i>
-                                </li>
-                                <li>
-                                  <i class="fa fa-window-maximize full-card"></i>
-                                </li>
-                                <li><i class="fa fa-minus minimize-card"></i></li>
-                                <li><i class="fa fa-refresh reload-card"></i></li>
-                                <li><i class="fa fa-trash close-card"></i></li>
-                              </ul> --}}
+                              <a href="/wilayah/create" class="btn btn-primary"><i class="ti-plus"></i> Tambah Wilayah</a>
                             </div>
                           </div>
                           <div class="card-block table-border-style">
@@ -51,18 +42,28 @@
                                 <thead>
                                   <tr>
                                     <th>No</th>
+                                    <th>Gambar</th>
                                     <th>Nama Koperasi dan UKM</th>
-                                    <th>Kabupaten/Kota</th>
-                                    <th>File</th>
+                                    <th>Aksi</th>
                                   </tr>
                                 </thead>
                                 <tbody>
                                   @foreach ($data as $item)
                                   <tr>
                                     <th scope="row">{{$loop->iteration}}</th>
-                                    <td>{{ $item->nama_koperasi }}</td>
-                                    <td>{{ $item->wilayah['nama']}}</td>
-                                    <td><a href="#"><img src="assets/images/pdf.png" width="30dp"></a>{{ $item->arsip_pendirian }}</td>
+                                    <td>
+                                      @if ($item->gambar)
+                                      <img style="max-width:100px;max-height:100px;" src="{{ url('logowilayah').'/'.$item->gambar }}"/> 
+                                      @endif
+                                    </td>
+                                    <td>{{ $item->nama }}</td>
+                                    <td><a href="/wilayah/{{$item->id}}/edit"><button class="btn btn-info">Edit</button></a>  
+                                    <form onsubmit="return confirm('Yakin mau hapus data?')" class="d-inline" action="/wilayah/{{ $item->id }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger" type="submit">Hapus</button>
+                                    </form>
+                                    </td>
                                   </tr>
                                   @endforeach
                                 </tbody>

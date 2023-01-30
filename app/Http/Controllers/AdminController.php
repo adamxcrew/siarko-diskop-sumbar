@@ -33,8 +33,10 @@ class AdminController extends Controller
   }
 
   public function arsippendirian(){
+    $koperasi = Koperasi::get();
     return view('arsip-pendirian',[
-        "title" => "Arsip Pendirian Koperasi & UKM"
+        "title" => "Arsip Pendirian Koperasi & UKM",
+        'data' => $koperasi
     ]);
   }
 
@@ -72,6 +74,11 @@ class AdminController extends Controller
      return redirect('master-data');
   }
 
+  public function tester(){
+    return view('tester-hanif',[
+        "title" => "Arsip Perubahan Anggaran Dasar Koperasi & UKM"
+    ]);
+  }
 
 
 }

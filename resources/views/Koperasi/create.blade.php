@@ -32,60 +32,54 @@
                         </div>
                         <div class="card-block">
                             
-                            <form action="/koperasi-add" method="POST">
+                            <form method="POST" action="/koperasi" enctype="multipart/form-data" >
                                 @csrf
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Nama</label>
+                                    <label class="col-sm-2 col-form-label">Nama Koperasi</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="nama_koperasi" id="nama_koperasi"
+                                        <input type="text" class="form-control" name="nama" id="nama"
                                         placeholder="Masukkan Nama Koperasi dan UKM" required>
                                     </div>
                                 </div>
-                                {{-- <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Kota/Kabupaten</label>
+                                <div class="form-group row">
+                                    <label class="col-sm-2 col-form-label">Wilayah</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control"
-                                        placeholder="Pilih Alamat Koperasi">
-                                    </div>
-                                </div> --}}
-                                {{-- <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Masukkan Arsip Pendirian</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="arsip_pendirian" id="arsip_pendirian"
-                                        placeholder="Pilih Alamat Koperasi" required>
+                                        <select name="id_kotakab" id="id_kotakab" class="form-control">
+                                            <option value="">Pilih Daerah</option>
+                                        @foreach($data as $item)
+                                            <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                                        @endforeach
+                                    </select>
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">Masukkan Arsip PAD</label>
+                                    <label class="col-sm-2 col-form-label">Arsip Pendirian</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control"  name="arsip_pad" id="arsip_pad"
-                                        placeholder="Pilih Alamat Koperasi" required>
+                                        <input type="file" class="form-control" name="arsip_pendirian" id="arsip_pendirian"  required>
                                     </div>
-                                </div> --}}
+                                </div> 
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">ID Kota Kabupaten</label>
+                                    <label class="col-sm-2 col-form-label">Arsip PAD 1</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control"  name="id_kotakab" id="id_kotakab"
-                                        placeholder="Pilih Alamat Koperasi" required>
+                                        <input type="file" class="form-control" name="arsip_pad_1" id="arsip_pad_1">
                                     </div>
-                                </div>
+                                </div>  
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">File Pendirian</label>
+                                    <label class="col-sm-2 col-form-label">Arsip PAD 2</label>
                                     <div class="col-sm-10">
-                                        <input type="file" class="form-control">
+                                        <input type="file" class="form-control" name="arsip_pad_2" id="arsip_pad_2">
                                     </div>
-                                </div>
+                                </div>  
                                 <div class="form-group row">
-                                    <label class="col-sm-2 col-form-label">File PAD</label>
+                                    <label class="col-sm-2 col-form-label">Arsip PAD 3</label>
                                     <div class="col-sm-10">
-                                        <input type="file" class="form-control">
+                                        <input type="file" class="form-control" name="arsip_pad_3" id="arsip_pad_3">
                                     </div>
-                                </div>
-                                
-                                    <!-- button Default -->
+                                </div>                               
+                                <div class="card-footer">  <!-- button Default -->
                                     <button type="submit" class="btn waves-effect waves-light btn-style btn-green" style="float: right; margin-left:20px">Tambah</button>
                                     <button type="reset" class="btn waves-effect waves-light btn-style btn-danger" style="float: right">Batal</button>
-                                
+                                </div>
                                                 </form>
                                             </div>
                                         </div>

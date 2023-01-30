@@ -14,10 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('koperasis', function (Blueprint $table) {
-            $table->id('id_koperasi');
+            $table->id();
             $table->string('nama_koperasi');
             $table->string('arsip_pendirian');
-            $table->string('arsip_pad');
+            $table->string('arsip_pad_1')->nullable();
+            $table->string('arsip_pad_2')->nullable();
+            $table->string('arsip_pad_3')->nullable();
             $table->foreignId('id_kotakab');
         });
     }
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('koperasis');
+        Schema::dropIfExists('koperasi');
     }
 };
