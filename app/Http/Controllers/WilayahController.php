@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Wilayah;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class WilayahController extends Controller
 {
@@ -17,7 +18,7 @@ class WilayahController extends Controller
     public function index()
     {
       $wilayah = Wilayah::get();
-      return view('/Wilayah/index',[
+      return view('Admin/Wilayah/index',[
         "title" => "Wilayah",
         "data" => $wilayah
       ]); 
@@ -30,7 +31,7 @@ class WilayahController extends Controller
      */
     public function create()
     {
-        return view('/Wilayah/create',[
+        return view('Admin/Wilayah/create',[
             "title" => "Tambah Wilayah"
           ]);  
     }
@@ -52,7 +53,7 @@ class WilayahController extends Controller
          'gambar' =>  $gambar_nama
         ];
         wilayah::create($data);
-        return redirect('wilayah');
+        return redirect('wilayah')->with('added','Data berhasil disimpan');
     }
 
     public function show($id)
@@ -70,7 +71,7 @@ class WilayahController extends Controller
     public function edit($id)
     {
         $wilayah = wilayah::where('id',$id)->first();
-        return view('/Wilayah/edit',[
+        return view('Admin/Wilayah/edit',[
             "title" => "Edit Wilayah",
             "data" => $wilayah
           ]);  
@@ -86,14 +87,19 @@ class WilayahController extends Controller
     public function update(Request $request, $id)
     {
 
-        $gambar = $request->file('gambar');
-        $gambar_ekstensi = $gambar->extension();
-        $gambar_nama = date('ymdhis').".".$gambar_ekstensi;
-        $gambar->move(public_path('logowilayah'),$gambar_nama);
+        if ($request->gambar==NULL) {
+            $gambar_nama=wilayah::where('id', $id)->value('gambar');
+        } elseif($request->gambar!=NULL){
+            
+            File::delete(public_path('logowilayah').'/'.$request->oldGambar);
 
-        $data_gambar = wilayah::where('id', $id)->first();
-        File::delete(public_path('logowilayah'.'/',$data_gambar->gambar));
-        
+            $gambar = $request->file('gambar');
+            $gambar_ekstensi = $gambar->extension();
+            $gambar_nama = date('ymdhis').".".$gambar_ekstensi;
+            $gambar->move(public_path('logowilayah'),$gambar_nama);
+
+        }
+
         $data = [
             'nama' => $request-> input('nama'),
             'gambar'=> $gambar_nama
@@ -102,7 +108,7 @@ class WilayahController extends Controller
 
         
         wilayah::where('id',$id)->update($data);
-        return redirect('wilayah');
+        return redirect('wilayah')->with('update','Data berhasil diperbaharui');
     }
 
     /**
@@ -117,5 +123,13 @@ class WilayahController extends Controller
         File::delete(public_path('logowilayah').'/'.$data->gambar);
         wilayah::where('id', $id)->delete();
         return redirect('/wilayah');
+    }
+
+    public function deletewilayah($id)
+    {
+        $data = wilayah::where('id', $id)->first();
+        File::delete(public_path('logowilayah').'/'.$data->gambar);
+        wilayah::where('id', $id)->delete();
+        return redirect('/wilayah')->with('sukses','Data berhasil dihapus');
     }
 }

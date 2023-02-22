@@ -23,7 +23,7 @@ class Koperasi extends Model
 
     public function wilayah()
     {
-        return $this->belongsTo(Wilayah::class, 'id', 'id');
+        return $this->belongsTo(Wilayah::class, 'id_kotakab', 'id');
     }
 
 }

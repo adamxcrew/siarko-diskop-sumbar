@@ -14,6 +14,6 @@ class Wilayah extends Model
 
     public function Koperasi()
     {
-        return $this->hasMany(Koperasi::class, 'id_kotakab', 'id');
+        return $this->hasMany(Koperasi::class, 'id_kotakab','id');
     }
 }

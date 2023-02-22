@@ -30,11 +30,7 @@ class AuthController extends Controller
         return redirect()->intended('/dashboard-admin');
       }
 
-      Session::flash('status', 'failed');
-      Session::flash('message', 'login wrong');
-
-      return redirect('/login');
-
+      return back()->with('loginError', 'Email atau Password anda Salah');
     }
 
 
